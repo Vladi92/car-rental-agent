@@ -5,7 +5,7 @@ import com.vladi.carrental.backend.dto.CarSearchRequest;
 
 import java.util.List;
 
-public interface CarRentalProvider {
+public interface CarOfferProvider {
 
     List<CarOffer> search(CarSearchRequest request);
 }

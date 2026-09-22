@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Component
-public class MockCarRentalProvider implements CarRentalProvider{
+public class MockCarOfferProvider implements CarOfferProvider{
     @Override
     public List<CarOffer> search(CarSearchRequest request) {
         return List.of(new CarOffer(
