@@ -5,6 +5,7 @@ import com.vladi.carrental.backend.domain.CarOffer;
 import com.vladi.carrental.backend.dto.CarSearchRequest;
 import com.vladi.carrental.backend.dto.PostResponse;
 import com.vladi.carrental.backend.service.CarSearchService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class CarSearchController {
     }
 
     @PostMapping("/search")
-    public List<CarOffer> carSearch(@RequestBody CarSearchRequest request) {
+    public List<CarOffer> carSearch(@Valid @RequestBody CarSearchRequest request) {
         return carSearchService.search(request);
     }
 
