@@ -11,16 +11,16 @@ import java.time.LocalDateTime;
 @Getter
 public class CarSearchRequest {
 
-    @NotBlank
+    @NotBlank(message = "Pick up location is required")
     private String pickupLocation;
-    @NotNull
+    @NotNull(message = "Pick up date is required")
     private LocalDateTime pickupDate;
-    @NotBlank
+    @NotBlank(message = "Drop off location is required")
     private String dropoffLocation;
-    @NotNull
+    @NotNull(message = "Drop off date is required")
     private LocalDateTime dropoffDate;
-    @NotNull
-    @Min(18)
-    @Max(100)
+    @NotNull(message = "Driver age is required")
+    @Min(value = 18, message = "Driver must be at least 18 years old")
+    @Max(value = 100, message = "Driver age must not exceed 100")
     private Integer driverAge;
 }
