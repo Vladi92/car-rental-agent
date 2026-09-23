@@ -30,4 +30,13 @@ public class GlobalExceptionHandler {
                 .badRequest()
                 .body(errors);
     }
+
+    @ExceptionHandler(InvalidSearchRequestException.class)
+    public ResponseEntity<?> handleInvalidSearch(
+            InvalidSearchRequestException ex) {
+
+        return ResponseEntity
+                .badRequest()
+                .body(ex.getMessage());
+    }
 }
